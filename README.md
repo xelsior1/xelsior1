@@ -1,4 +1,4 @@
-- sup everyone. im just a guy who happens to have coding knowledge. thats it.
+- i am a professional yapper
 <!---
 xelsior1/xelsior1 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
