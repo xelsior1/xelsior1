@@ -1,0 +1,57 @@
+        if x > width / 4 * 3:
+            CameraX += 10
+        if x < width / 4 * 3:
+            CameraX += -10
+        if y > height / 4 * 3:
+            CameraY += 10
+        if y < height / 4 * 3:
+            CameraY += -10
+
+             screen.blit(bif, (0 - CameraX, 0 - CameraY))
+    screen.blit(player, (x - CameraX, y - CameraY))
+
+    player = pygame.image.load("C:/Users/itish/Downloads/New Piskel(7).png").convert_alpha()
+    player = pygame.image.load("C:/Users/itish/Downloads/New Piskel(7).png").convert() #load a sprite image
+    collide = pygame.Rect.colliderect(player_rect, portal_Left_rect)
+            if collide:
+            CameraX, CameraY = 0, 0
+    keys = pygame.key.get_pressed()
+        if not player.rect.colliderect(portal_Left.rect()):
+        pass
+    else:
+        CameraX, CameraY = 0, 0
+
+        portal_Left = pygame.image.load("C:/Users\itish\Downloads/48890ee8a13e3f6(2).png").convert()
+        rect = portal_Left.get_rect()
+rect.center = (2190, 0)
+portal_Right = pygame.image.load("C:/Users\itish\Downloads/48890ee8a13e3f6(2).png")
+portal_Up = pygame.image.load("C:/Users\itish\Downloads/48890ee8a13e3f6(2).png")
+portal_Down = pygame.image.load("C:/Users\itish\Downloads/48890ee8a13e3f6(2).png")
+portal_Left_rect = Rect(200, 200, 200, 200)
+
+screen.blit(portal_Right, (3590 - CameraX, 500 - CameraY))
+    screen.blit(portal_Up, (-50 - CameraX, -3060 - CameraY))
+    screen.blit(portal_Down, (500 - CameraX, 4500 - CameraY))
+
+    player = pygame.image.load("C:/Users\itish\Downloads/New Piskel(7).png")
+
+
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self, picture_path):
+        super().__init__()
+        pygame.sprite.Sprite.__init__(self, x, y)
+        self.image = pygame.image.load(picture_path)
+        self.rect = self.image.get_rect()
+        self.rect.center = [x, y]
+    def shoot(self):
+        pygame.sprite.spritecollide(player_group, target_group, True)
+
+    def new(self):
+        player_group.add(new_player)
+        player_group.draw(screen)
+player_group = pygame.sprite.Group()
+for player in range(1):
+    new_player = Player("C:/Users\itish\Downloads/New Piskel(7).png", x, y)
+    player_group.add(new_player)
+
